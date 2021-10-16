@@ -1,42 +1,52 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up"],
-         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?","Howdy!","Wazzzzzzzzzzzap"],
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up","hey","hiya"],
+         "responses": ["Hello!", "Good to see you!", "Hi there, how can I help?"],
          "context_set": ""
         },
         {"tag": "goodbye",
-         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
-         "responses": ["Sad to see you go :( (type quit)", "Talk to you later (type quit)", "Goodbye! (type quit)","Until next time (type quit)"],
+         "patterns": ["cya","bye", "See you later", "Goodbye", " Leaving", "Have a Good day"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!","Until next time"],
+         "context_set": ""
+        },
+        {"tag": "age",
+         "patterns": ["how old", "how old is tim", "what is your age", "how old are you", "age?"],
+         "responses": ["I am 18 years old!", "18 years young!"],
          "context_set": ""
         },
         {"tag": "name",
          "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["Just call me a buddy"],
+         "responses": ["You can call me SAR21"],
          "context_set": ""
         },
-        {"tag": "stress",
-         "patterns": ["I am feeling stressed", "I am not feeling good","I am feeling depressed","depression"],
-         "responses": ["I am sorry to hear that, what do you think is causing that feeling?","Forced smiling tricks the brain so you feel good! You can try that!"],
+        {"tag": "mental_health_meaning",
+         "patterns":["What does it mean to have a mental illness?","Define mental illness","what is mental illness"],
+         "responses":["Mental illnesses are health conditions that disrupt a person‚thoughts, emotions, relationships, and daily functioning. They are associated with distress and diminished capacity to engage in the ordinary activities of daily life.Mental illnesses fall along a continuum of severity: some are fairly mild and only interfere with some aspects of life, such as certain phobias. On the other end of the spectrum lie serious mental illnesses, which result in major functional impairment and interference with daily life. These include such disorders as major depression, schizophrenia, and bipolar disorder, and may require that the person receives care in a hospital.Similarly to how one would treat diabetes with medication and insulin, mental illness is treatable with a combination of medication and social support. These treatments are highly effective, with 70-90 percent of individuals receiving treatment experiencing a reduction in symptoms and an improved quality of life. With the proper treatment, it is very possible for a person with mental illness to be independent and successful."],
          "context_set": ""
         },
-        {"tag": "exam",
-         "patterns": ["I have an exam","I am not prepared","I will fail","I wanna die"],
-         "responses": ["The best think to do right now is take some fresh air and think with a cool mind", "Just do your best!","fail"],
+        {"tag": "Causes",
+         "patterns":["What causes mental illness?","causes of mental illness","causes","Who does mental illness affect?"],         
+         "responses":["It is estimated that mental illness affects 1 in 5 adults in America, and that 1 in 24 adults have a serious mental illness. Mental illness does not discriminate; it can affect anyone, regardless of gender, age, income, social status, ethnicity, religion, sexual orientation, or background.Although mental illness can affect anyone, certain conditions may be more common in different populations. For instance, eating disorders tend to occur more often in females, while disorders such as attention deficit/hyperactivity disorder is more prevalent in children.Additionally, all ages are susceptible, but the young and the old are especially vulnerable. Mental illnesses usually strike individuals in the prime of their lives, with 75 percent of mental health conditions developing by the age of 24. This makes identification and treatment of mental disorders particularly difficult, because the normal personality and behavioral changes of adolescence may mask symptoms of a mental health condition.Parents and caretakers should be aware of this fact, and take notice of changes in their childÃ¢â‚¬â„¢s mood, personality, personal habits, and social withdrawal. When these occur in children under 18, they are referred to as serious emotional disturbances (SEDs)."],
+         "context_set": ""
+        },
+        {"tag": "tips",
+         "patterns":["study tips?","tips for exams?"," stressed"," feeling burnt out","anxious"],         
+         "responses":["Do not worry so much! It is important to study but it is more important to take care of your mental health. Remember to take breaks when you're studying. Take notes for all of your courses and revise them properly before the exam. Remember, at the end of the day, one exam is not the end of everything :))"],
+         "context_set": ""
+        },
+        {"tag": "Sad",
+         "patterns":["feeling sad"," depressed","don't see meaning in my life anymore","sad","depressed","depression"],        
+         "responses":["You can always talk to me!!"," here for you","Is there anything I can do for you?","I care for you","Please reach out to your family/friends.They care a lot about you","It is okay to not feel okay. Please go for a visit to your family doctor."],
          "context_set": ""
         },
         {"tag": "social",
-         "patterns": ["I don't have any friends","I am lonely","I am alone"],
-         "responses": ["I am there for you","Talk to me, I will try to help you","I am also lonely, but that does not make me sad. I have YOU! :)","social"],
+         "patterns":[" unable to make any friends","don't have any friends","Having social problems","no one likes me"],        
+         "responses":["I can understand why you feel that way, but I can assure you that it's just your anxiety.It isn't real!","Why do you think so?","When I feel the same way,I often think of reading a book or playing a game!:)","Be patient! Maybe the people you think do not like you are just some people that you are not meant to meet. There is always someone that will be friends with you!"],
          "context_set": ""
         },
-        {"tag": "jibberish",
-         "patterns": ["cwverrvev","ceqvywickuye","whcvkqtywve"],
-         "responses": ["bcwiucbkue quyecvqyuv ceceibc... Maybe we both are speaking the language of the gods"],
-         "context_set": ""
-        },
-        {"tag": "mentalFAQ",
-         "patterns": [],
-         "responses": [],
+        {"tag": "relationships",
+         "patterns":["like a girl but she already has a boyfriend","My girlfriend thinks I am gay","relationship","commit","commitment","trust","cheating"],        
+         "responses":["Ask yourself if they are worth it!","Your social wellbeing is the most important","Try giving them one last chance"],
          "context_set": ""
         }
    ]
