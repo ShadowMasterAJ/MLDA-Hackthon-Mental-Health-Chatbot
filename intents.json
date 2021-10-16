@@ -1,0 +1,43 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up"],
+         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?","Howdy!","Wazzzzzzzzzzzap"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
+         "responses": ["Sad to see you go :( (type quit)", "Talk to you later (type quit)", "Goodbye! (type quit)","Until next time (type quit)"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?"],
+         "responses": ["Just call me a buddy"],
+         "context_set": ""
+        },
+        {"tag": "stress",
+         "patterns": ["I am feeling stressed", "I am not feeling good","I am feeling depressed","depression"],
+         "responses": ["I am sorry to hear that, what do you think is causing that feeling?","Forced smiling tricks the brain so you feel good! You can try that!"],
+         "context_set": ""
+        },
+        {"tag": "exam",
+         "patterns": ["I have an exam","I am not prepared","I will fail","I wanna die"],
+         "responses": ["The best think to do right now is take some fresh air and think with a cool mind", "Just do your best!","fail"],
+         "context_set": ""
+        },
+        {"tag": "social",
+         "patterns": ["I don't have any friends","I am lonely","I am alone"],
+         "responses": ["I am there for you","Talk to me, I will try to help you","I am also lonely, but that does not make me sad. I have YOU! :)","social"],
+         "context_set": ""
+        },
+        {"tag": "jibberish",
+         "patterns": ["cwverrvev","ceqvywickuye","whcvkqtywve"],
+         "responses": ["bcwiucbkue quyecvqyuv ceceibc... Maybe we both are speaking the language of the gods"],
+         "context_set": ""
+        },
+        {"tag": "mentalFAQ",
+         "patterns": [],
+         "responses": [],
+         "context_set": ""
+        }
+   ]
+}
