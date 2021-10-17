@@ -1,3 +1,4 @@
+from flask import request
 from flask import Flask, render_template, request
 import pickle
 from nltk.stem.lancaster import LancasterStemmer
@@ -77,7 +78,7 @@ tf.compat.v1.reset_default_graph()
 net = tflearn.input_data(shape=[None, len(training[0])])
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, 8)
+# net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
@@ -102,6 +103,7 @@ def bag_of_words(s, words):
 
     return np.array(bag)
 
+
 app = Flask(__name__)
 
 botname = 'Norman'
@@ -111,9 +113,14 @@ botname = 'Norman'
 def home():
     return render_template("index.html", botname=botname)
 
+
 @app.route("/get")
 def get_bot_response():
     userInput = request.args.get('msg')
+    if(userInput.lower() == "quit"):
+        import sys
+        sys.exit()
+        return
     results = model.predict([bag_of_words(userInput, words)])
     results_index = np.argmax(results)
     tag = labels[results_index]
@@ -124,5 +131,19 @@ def get_bot_response():
 
     return str(random.choice(responses))
 
+
+# def shutdown_server():
+#     func = request.environ.get('werkzeug.server.shutdown')
+#     if func is None:
+#         raise RuntimeError('Not running with the Werkzeug Server')
+#     func()
+
+
+# @app.route('/shutdown', methods=['GET'])
+# def shutdown():
+#     shutdown_server()
+#     return 'Server shutting down...'
+
+
 if __name__ == '_main_':
-    app.run(port=5500)
+    app.run(port=5000)

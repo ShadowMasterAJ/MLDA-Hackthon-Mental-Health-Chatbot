@@ -4,21 +4,19 @@
          "responses": ["Hello!", "Good to see you!", "Hi there, how can I help?"],
          "context_set": ""
         },
+
         {"tag": "goodbye",
          "patterns": ["cya","bye", "See you later", "Goodbye", " Leaving", "Have a Good day"],
          "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!","Until next time"],
          "context_set": ""
         },
-        {"tag": "age",
-         "patterns": ["how old", "how old is tim", "what is your age", "how old are you", "age?"],
-         "responses": ["I am 18 years old!", "18 years young!"],
-         "context_set": ""
-        },
+
         {"tag": "name",
-         "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["You can call me SAR21"],
+         "patterns": ["your name", "what should I call you"],
+         "responses": ["You can call me SAR"],
          "context_set": ""
         },
+
         {"tag": "mental_health_meaning",
          "patterns":["What does it mean to have a mental illness?","Define mental illness","what is mental illness"],
          "responses":["Mental illnesses are health conditions that disrupt a person‚thoughts, emotions, relationships, and daily functioning. They are associated with distress and diminished capacity to engage in the ordinary activities of daily life.Mental illnesses fall along a continuum of severity: some are fairly mild and only interfere with some aspects of life, such as certain phobias. On the other end of the spectrum lie serious mental illnesses, which result in major functional impairment and interference with daily life. These include such disorders as major depression, schizophrenia, and bipolar disorder, and may require that the person receives care in a hospital.Similarly to how one would treat diabetes with medication and insulin, mental illness is treatable with a combination of medication and social support. These treatments are highly effective, with 70-90 percent of individuals receiving treatment experiencing a reduction in symptoms and an improved quality of life. With the proper treatment, it is very possible for a person with mental illness to be independent and successful."],
