@@ -106,12 +106,10 @@ def bag_of_words(s, words):
 
 app = Flask(__name__)
 
-botname = 'Norman'
-
 
 @app.route("/")
 def home():
-    return render_template("index.html", botname=botname)
+    return render_template("index.html", botname="MentaliSAR")
 
 
 @app.route("/get")
@@ -130,19 +128,6 @@ def get_bot_response():
             responses = tg['responses']
 
     return str(random.choice(responses))
-
-
-# def shutdown_server():
-#     func = request.environ.get('werkzeug.server.shutdown')
-#     if func is None:
-#         raise RuntimeError('Not running with the Werkzeug Server')
-#     func()
-
-
-# @app.route('/shutdown', methods=['GET'])
-# def shutdown():
-#     shutdown_server()
-#     return 'Server shutting down...'
 
 
 if __name__ == '_main_':
