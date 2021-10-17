@@ -35,13 +35,13 @@
          "context_set": ""
         },
         {"tag": "Sad",
-         "patterns":["feeling sad"," depressed","don't see meaning in my life anymore","sad","depressed","depression"],        
+         "patterns":["feeling sad"," depressed","don't see meaning in my life anymore","am sad","depressed","depression"],        
          "responses":["You can always talk to me!!"," here for you","Is there anything I can do for you?","I care for you","Please reach out to your family/friends.They care a lot about you","It is okay to not feel okay. Please go for a visit to your family doctor."],
          "context_set": ""
         },
         {"tag": "social",
          "patterns":[" unable to make any friends","don't have any friends","Having social problems","no one likes me"],        
-         "responses":["I can understand why you feel that way, but I can assure you that it's just your anxiety.It isn't real!","Why do you think so?","When I feel the same way,I often think of reading a book or playing a game!:)","Be patient! Maybe the people you think do not like you are just some people that you are not meant to meet. There is always someone that will be friends with you!"],
+         "responses":["I can understand why you feel that way, but I can assure you that it's just your anxiety.It isn't real!","Why do you think so?","When I feel the same way,I often think of reading a book or playing a game!:)","Be patient! Maybe the people you think do not like you are just some people that you are not meant to meet. There is always someone who will be friends with you!"],
          "context_set": ""
         },
         {"tag": "relationships",

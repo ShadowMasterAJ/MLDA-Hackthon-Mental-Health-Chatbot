@@ -1,0 +1,100 @@
+body {
+  font-family: Garamond;
+  background-image: url(shron.jpg);
+  /* background-color: black; */
+}
+
+h1 {
+  color: black;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+  font-size: 40px;
+}
+
+h3 {
+  color: black;
+  font-size: 20px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+#chatbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  display: flex;
+
+  flex-direction: column;
+}
+
+#userInput {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 60px;
+}
+
+#textInput {
+  width: 100%;
+  border: none;
+  font-family: monospace;
+  font-size: 17px;
+  border-radius: 90px;
+  height: 40px;
+  padding: 10px;
+}
+
+#buttonInput {
+  padding: 3px;
+  font-family: monospace;
+  font-size: 17px;
+}
+
+.userText {
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 17px;
+  text-align: right;
+  line-height: 30px;
+}
+
+.userText span {
+  background-color: rgb(195, 35, 35);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.botText {
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 17px;
+  text-align: left;
+  line-height: 30px;
+}
+.botText div {
+  background-color: rgb(89, 0, 255);
+  padding: 10px;
+  border-radius: 30px;
+}
+.botText span {
+  background-color: rgb(89, 0, 255);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+#jaiswal {
+  background-color: rgb(89, 0, 255);
+  padding: 10px;
+  border-radius: 30px;
+  color: white;
+}
+
+#tidbit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+}

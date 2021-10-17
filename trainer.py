@@ -1,5 +1,5 @@
 import pickle
-from nltk.stem.lancaster import LancasterStemmer
+from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 import json
 import random
@@ -10,7 +10,7 @@ import nltk
 nltk.download('punkt')
 nltk.download('wordnet')
 
-stemmer = LancasterStemmer()
+stemmer = PorterStemmer()
 lemmatizer = WordNetLemmatizer()
 
 with open("intents.json") as file:
@@ -24,17 +24,17 @@ docs_y = []
 for intent in data["intents"]:
     for pattern in intent["patterns"]:
         wrds = nltk.word_tokenize(pattern)
-        # lemmedWrds = [lemmatizer.lemmatize(wrd) for wrd in wrds]
-
         words.extend(wrds)
-        # words.extend(lemmedWrds)
         docs_x.append(wrds)
         docs_y.append(intent["tag"])
 
     if intent["tag"] not in labels:
         labels.append(intent["tag"])
 
-words = [stemmer.stem(w.lower()) for w in words if w != "?"]
+# words = [stemmer.stem(w.lower()) for w in words if w != "?"]
+words = [lemmatizer.lemmatize(w.lower()) for w in words if w != "?"]
+
+# words.extend([lemmatizer.lemmatize(w.lower()) for w in words if w != "?"])
 words = sorted(list(set(words)))
 
 labels = sorted(labels)
@@ -47,7 +47,10 @@ out_empty = [0 for _ in range(len(labels))]
 for x, doc in enumerate(docs_x):
     bag = []
 
-    wrds = [stemmer.stem(w.lower()) for w in doc]
+    # wrds = [stemmer.stem(w.lower()) for w in doc]
+    wrds = [lemmatizer.lemmatize(w.lower()) for w in doc]
+
+    # wrds.extend([lemmatizer.lemmatize(w.lower()) for w in doc])
 
     for w in words:
         if w in wrds:

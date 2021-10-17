@@ -1,3 +1,4 @@
+from flask import Flask, render_template, request
 import pickle
 from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem import WordNetLemmatizer
@@ -7,6 +8,7 @@ import tensorflow as tf
 import tflearn
 import numpy as np
 import nltk
+
 nltk.download('punkt')
 nltk.download('wordnet')
 
@@ -35,7 +37,9 @@ except:
         if intent["tag"] not in labels:
             labels.append(intent["tag"])
 
-    words = [stemmer.stem(w.lower()) for w in words if w != "?"]
+    # words = [stemmer.stem(w.lower()) for w in words if w != "?"]
+    words = [lemmatizer.lemmatize(w.lower()) for w in words if w != "?"]
+
     words = sorted(list(set(words)))
 
     labels = sorted(labels)
@@ -99,21 +103,50 @@ def bag_of_words(s, words):
     return np.array(bag)
 
 
-def chat():
-    print("Start talking with the bot (type quit to stop)!")
-    while True:
-        inp = input("You: ")
-        if inp.lower() == "quit":
-            break
+# def chat():
+#     print("Start talking with the bot (type quit to stop)!")
+#     while True:
+#         inp = input("You: ")
+#         if inp.lower() == "quit":
+#             break
 
-        results = model.predict([bag_of_words(inp, words)])
-        results_index = np.argmax(results)
-        tag = labels[results_index]
+#         results = model.predict([bag_of_words(inp, words)])
+#         results_index = np.argmax(results)
+#         tag = labels[results_index]
 
-        for tg in data["intents"]:
-            if tg['tag'] == tag:
-                responses = tg['responses']
+#         for tg in data["intents"]:
+#             if tg['tag'] == tag:
+#                 responses = tg['responses']
 
-        print(random.choice(responses))
+#         print(random.choice(responses))
 
-chat()
+
+# chat()
+
+
+app = Flask(__name__)
+
+botname = 'Norman'
+
+
+@app.route("/")
+def home():
+    return render_template("index.html", botname=botname)
+
+
+@app.route("/get")
+def get_bot_response():
+    userInput = request.args.get('msg')
+    results = model.predict([bag_of_words(userInput, words)])
+    results_index = np.argmax(results)
+    tag = labels[results_index]
+
+    for tg in data["intents"]:
+        if tg['tag'] == tag:
+            responses = tg['responses']
+
+    return str(random.choice(responses))
+
+
+if __name__ == '_main_':
+    app.run(port=5500)
