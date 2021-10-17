@@ -102,28 +102,6 @@ def bag_of_words(s, words):
 
     return np.array(bag)
 
-
-# def chat():
-#     print("Start talking with the bot (type quit to stop)!")
-#     while True:
-#         inp = input("You: ")
-#         if inp.lower() == "quit":
-#             break
-
-#         results = model.predict([bag_of_words(inp, words)])
-#         results_index = np.argmax(results)
-#         tag = labels[results_index]
-
-#         for tg in data["intents"]:
-#             if tg['tag'] == tag:
-#                 responses = tg['responses']
-
-#         print(random.choice(responses))
-
-
-# chat()
-
-
 app = Flask(__name__)
 
 botname = 'Norman'
@@ -132,7 +110,6 @@ botname = 'Norman'
 @app.route("/")
 def home():
     return render_template("index.html", botname=botname)
-
 
 @app.route("/get")
 def get_bot_response():
@@ -146,7 +123,6 @@ def get_bot_response():
             responses = tg['responses']
 
     return str(random.choice(responses))
-
 
 if __name__ == '_main_':
     app.run(port=5500)

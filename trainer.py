@@ -82,5 +82,5 @@ net = tflearn.regression(net)
 model = tflearn.DNN(net, tensorboard_verbose=3)
 
 model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True,)
-print(model.get_weights(net.W))
+# print(model.get_weights(net.W))
 model.save("model.tflearn")
